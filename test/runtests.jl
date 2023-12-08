@@ -45,7 +45,7 @@ end
             not_after = ".",
             not_before = NON_SEPARATOR)
 
-    @test collect(m.match for m in eachmatch(reg, str4)) == ["1", "-5", "60", "700", "+9000"]      
+    @test collect(m.match for m in eachmatch(reg, str4)) == ["1", "-5", "60", "700", "+9000"]
 end
 
 @testset "Numbers" begin
@@ -146,9 +146,11 @@ end
     @test match(at_least(2, DIGIT) * "4", str2).match == "1234"
     @test match(possessive_at_least(2, DIGIT) * "4", str2) === nothing
 
-    # don't quite understand why this doesn't work, leave it out for now
-    # str3 = "123"
+    str3 = "123"
 
-    # @test match(maybe("123") * "3", str3).match == "3"
-    # @test match(possessive_maybe("123") * "3", str3) === nothing
+    @test match(maybe("123") * "3", str3).match == "3"
+    @test match(possessive_maybe("123") * "3", str3).match == "3"
+    @test match(possessive_maybe("12") * "3", str3).match == "123"
+
+    @test Regex(possessive_maybe("12") * "3") == r"(?:12)?+3"
 end
