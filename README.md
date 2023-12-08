@@ -1,7 +1,7 @@
 # ReadableRegex
 
-[![Build Status](https://travis-ci.com/jkrumbiegel/ReadableRegex.jl.svg?branch=master)](https://travis-ci.com/jkrumbiegel/ReadableRegex.jl)
-[![Codecov](https://codecov.io/gh/jkrumbiegel/ReadableRegex.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/jkrumbiegel/ReadableRegex.jl)
+[![CI](https://github.com/palday/ReadableRegex.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/palday/ReadableRegex.jl/actions/workflows/CI.yml)
+[![Codecov](https://codecov.io/gh/palday/ReadableRegex.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/palday/ReadableRegex.jl)
 
 
 ## A package for people who don't want to learn or read regexes
@@ -60,8 +60,8 @@ r"(?:(?<!\.)(?:(?:[+\-])?(?:\d)+))(?!\P{Z})"
 julia> eachmatch(reg, "1 2.0 .3 -.4 -5 60 700 800.9 +9000") .|> println;
 
 RegexMatch("1")
-RegexMatch("-5") 
-RegexMatch("60") 
+RegexMatch("-5")
+RegexMatch("60")
 RegexMatch("700")
 RegexMatch("+9000")
 ```
