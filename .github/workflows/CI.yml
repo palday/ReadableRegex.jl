@@ -5,11 +5,13 @@ on:
         - 'README.md'
       branches:
         - main
+        - master
   pull_request:
       paths-ignore:
         - 'README.md'
       branches:
         - main
+        - master
 jobs:
   test:
     name: Julia ${{ matrix.version }} - StatsModels ${{ matrix.statsmodels }} - ${{ matrix.os }} - ${{ matrix.arch }} - ${{ github.event_name }}
