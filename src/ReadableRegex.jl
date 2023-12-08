@@ -37,7 +37,7 @@ export lazy_at_least
 export possessive_zero_or_more
 export possessive_one_or_more
 export possessive_between
-# export possessive_maybe
+export possessive_maybe
 export possessive_at_least
 
 export LETTER
@@ -273,7 +273,7 @@ lazy_at_least(n, r) = at_least(n, r) * rs"?"
 possessive_zero_or_more(r) = zero_or_more(r) * rs"+"
 possessive_one_or_more(r) = one_or_more(r) * rs"+"
 possessive_between(low, high, r) = between(low, high, r) * rs"+"
-# possessive_maybe(r) = maybe(r) * rs"+"
+possessive_maybe(r) = maybe(r) * rs"+"
 possessive_at_least(n, r) = at_least(n, r) * rs"+"
 
 function look_for(r;
